@@ -3,6 +3,7 @@ const board = document.querySelector('.board__img');
 const startTriviaBtn = document.querySelector('#start-trivia-btn');
 const triviaOptions = document.querySelector('.board__options');
 const loadingOverlay = document.querySelector('.loading-overlay');
+const resetButton = document.querySelector('.footer__button');
 let points = 0;
 
 startTriviaBtn.addEventListener('click', async () => {
@@ -10,6 +11,7 @@ startTriviaBtn.addEventListener('click', async () => {
   showScore(0);
   await buildBoard();
   hideLoading();
+  showResetButton();
 });
 
 function showLoading() {
@@ -43,7 +45,9 @@ async function buildBoard() {
 
 function nextRound() {
   resetBoard();
+  showLoading();
   buildBoard();
+  hideLoading();
 }
 
 function generateRandomNumbers() {
@@ -106,4 +110,8 @@ function shuffleArray(array) {
     [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
   }
   return newArray;
+}
+
+function showResetButton() {
+  resetButton.style.display = 'block';
 }

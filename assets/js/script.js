@@ -20,11 +20,18 @@ function generateRandomNumbers() {
   const randomNumbers = [];
   let i;
   for (i = 0; i < 4; i++) {
-    const randomNumber = Math.floor(Math.random() * 150 + 1);
+    const randomNumber = getUniqueRandomNumber(randomNumbers, 1, 150);
     randomNumbers.push(randomNumber);
   }
-
   return randomNumbers;
+}
+
+function getUniqueRandomNumber(array, min, max) {
+  let randomNumber = Math.floor(Math.random() * (max - min + 1) + min);
+  while (array.includes(randomNumber)) {
+    randomNumber = Math.floor(Math.random() * (max - min + 1) + min);
+  }
+  return randomNumber;
 }
 
 function showPokemon(pokeImg) {

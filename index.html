@@ -5,15 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PokeTrivia</title>
+    <link rel="stylesheet" href="assets/styles/reset.css" />
     <link rel="stylesheet" href="assets/styles/style.css" />
+    <link
+      rel="icon"
+      href="assets/img/pokemon_go_play_game_cinema_film_movie_icon-icons.com_69163.svg"
+    />
   </head>
   <body>
     <header></header>
     <main>
+      <div class="loading-overlay">
+        <div class="loading-icon">
+          <img
+            src="assets/img/Pokemon_Exchange_icon-icons.com_67524.svg"
+            alt="Loading Icon"
+          />
+        </div>
+      </div>
       <section class="poketrivia-board">
-        <button id="start-trivia-btn" class="board__start-btn">
-          CLIQUE AQUI
-        </button>
+        <button id="start-trivia-btn" class="board__start-btn">START</button>
+        <div class="board__score"></div>
         <div class="board__img"></div>
         <div class="board__options"></div>
       </section>

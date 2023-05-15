@@ -1,8 +1,33 @@
+const score = document.querySelector('.board__score');
 const board = document.querySelector('.board__img');
 const startTriviaBtn = document.querySelector('#start-trivia-btn');
 const triviaOptions = document.querySelector('.board__options');
+const loadingOverlay = document.querySelector('.loading-overlay');
+let points = 0;
 
 startTriviaBtn.addEventListener('click', async () => {
+  showLoading();
+  showScore(0);
+  await buildBoard();
+  hideLoading();
+});
+
+function showLoading() {
+  loadingOverlay.style.display = 'flex';
+}
+
+function hideLoading() {
+  setTimeout(() => {
+    loadingOverlay.style.display = 'none';
+  }, 1000);
+}
+
+function resetBoard() {
+  board.innerHTML = '';
+  triviaOptions.innerHTML = '';
+}
+
+async function buildBoard() {
   const pokemonNumbers = generateRandomNumbers();
   const pokemonPromises = pokemonNumbers.map(number =>
     fetch(`https://pokeapi.co/api/v2/pokemon/${number}`).then(response =>
@@ -14,7 +39,12 @@ startTriviaBtn.addEventListener('click', async () => {
   const correctPokemonName = pokemons[0].name;
   showPokemon(correctPokemon.sprites.front_default);
   showTriviaOptions(shuffleArray(pokemons), correctPokemonName);
-});
+}
+
+function nextRound() {
+  resetBoard();
+  buildBoard();
+}
 
 function generateRandomNumbers() {
   const randomNumbers = [];
@@ -44,14 +74,29 @@ function showTriviaOptions(pokemons, correctPokemonName) {
     const option = document.createElement('button');
     option.textContent = pokemon.name;
     option.addEventListener('click', () => {
-      if (option.textContent === correctPokemonName) {
-        console.log('Correct!');
-      } else {
-        console.log('Wrong!');
-      }
+      checkAnswer(option, correctPokemonName);
     });
     triviaOptions.appendChild(option);
   });
+}
+
+function checkAnswer(option, correctPokemonName) {
+  if (option.textContent === correctPokemonName) {
+    points++;
+
+    showScore(points);
+  } else {
+  }
+
+  nextRound();
+}
+
+function showScore(points) {
+  score.innerHTML = '';
+  const scorePoints = document.createElement('h2');
+  scorePoints.innerHTML = `<p>Score: ${points}</p>`;
+  scorePoints.classList.add('score__points');
+  score.appendChild(scorePoints);
 }
 
 function shuffleArray(array) {

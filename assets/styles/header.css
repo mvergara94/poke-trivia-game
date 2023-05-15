@@ -37,8 +37,8 @@ header {
 }
 
 .high-score {
-  font-size: 0.6rem;
+  font-size: 0.65rem;
   position: absolute;
   top: 60px;
-  right: 20px;
+  right: 15px;
 }

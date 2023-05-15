@@ -23,13 +23,13 @@
         />
       </div>
       <nav class="menu">
-        <button class="menu-btn previous-btn">
+        <button class="menu-btn previous-btn" id="previousBtn">
           <img src="assets/img/botaoprevnext.svg" alt="Previous Soundtrack" />
         </button>
-        <button class="menu-btn play-pause-btn">
+        <button class="menu-btn play-pause-btn" id="playPauseBtn">
           <img src="assets/img/pausebtn.svg" alt="Pause Button" />
         </button>
-        <button class="menu-btn next-btn">
+        <button class="menu-btn next-btn" id="nextBtn">
           <img src="assets/img/botaoprevnext.svg" alt="Next Button" />
         </button>
         <button class="menu-btn gear-btn">
@@ -55,6 +55,18 @@
     <footer class="footer">
       <button class="footer__button">RESET</button>
     </footer>
-    <script src="assets/js/script.js"></script>
+    <div class="tracks-container">
+      <audio
+        src="assets/sounds/467497__enviromaniac2__pokemon-route-201-cheesy-mix.mp3"
+        class="track first-track"
+        loop
+      ></audio>
+      <audio
+        src="assets/sounds/514155__edwardszakal__game-music.mp3"
+        class="track second-track"
+        loop
+      ></audio>
+    </div>
+    <script src="assets/js/script.js" type="module"></script>
   </body>
 </html>

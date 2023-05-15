@@ -1,0 +1,44 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 60px;
+  height: 60px;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+}
+
+.menu-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.menu-btn img {
+  width: 24px;
+}
+
+.next-btn img {
+  transform: rotate(180deg);
+}
+
+.high-score {
+  font-size: 0.6rem;
+  position: absolute;
+  top: 60px;
+  right: 20px;
+}

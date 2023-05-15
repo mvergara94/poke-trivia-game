@@ -1,8 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 @import url('overlay.css');
+@import url('header.css');
 @import url('footer.css');
 :root {
   --primary-font: 'Press Start 2P', cursive;
+
+  --overlay-font: #4ca7d7;
+  --background-menu-color: #c0ddec;
+  --btn-color: #a74f69;
 }
 
 * {
@@ -38,7 +43,7 @@ body::after {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('../img/static-assets-upload441714824788831168.webp');
+  background-image: url('../img/fundolapras.webp');
   background-repeat: no-repeat;
   background-size: cover;
   z-index: -2;

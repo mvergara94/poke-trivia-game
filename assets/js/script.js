@@ -10,9 +10,18 @@ startTriviaBtn.addEventListener('click', async () => {
   showLoading();
   showScore(0);
   await buildBoard();
+  hideStartButton();
   hideLoading();
   showResetButton();
 });
+
+resetButton.addEventListener('click', () => {
+  location.reload();
+});
+
+function hideStartButton() {
+  startTriviaBtn.style.display = 'none';
+}
 
 function showLoading() {
   loadingOverlay.style.display = 'flex';

@@ -5,7 +5,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.9);
   z-index: 9999;
   justify-content: center;
   align-items: center;
@@ -28,6 +28,10 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.loading-text {
+  color: var(--overlay-font);
 }
 
 .loading-text::after {

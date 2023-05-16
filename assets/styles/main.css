@@ -1,0 +1,66 @@
+.poketrivia-board {
+  margin: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 0.5rem;
+}
+
+.board__start-btn {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+  font-size: 2rem;
+  background-color: #c0ddec;
+  border: 2px solid var(--secondary-color);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s, box-shadow 0.3s;
+  outline: none;
+}
+
+.board__start-btn:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) inset;
+}
+
+.board__score:empty {
+  display: none;
+}
+
+.board__score {
+  display: block;
+  background: var(--background-menu-color);
+  border: 1px solid white;
+  align-self: center;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.board__img {
+  background-color: rgba(76, 167, 215, 0.3);
+  border-radius: 50%;
+}
+
+.board__img img {
+  width: 250px;
+}
+
+.board__options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.board__options button {
+  width: calc(50% - 0.5rem);
+  padding: 0.5rem 0;
+  border-radius: 0.5rem;
+  font-size: 0.65rem;
+  font-family: var(--primary-font);
+}
+
+.board__options button:active {
+  color: red;
+  transform: translateY(2px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) inset;
+}

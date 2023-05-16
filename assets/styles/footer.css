@@ -8,3 +8,16 @@
 .footer__button {
   display: none;
 }
+
+.footer__button {
+  padding: 0.5rem;
+  background: var(--background-menu-color);
+  font-family: var(--primary-font);
+  border-radius: 0.5rem;
+}
+
+.footer__button:active {
+  color: white;
+  transform: translateY(2px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) inset;
+}

@@ -44,6 +44,6 @@ function pauseAudio() {
     audioTracks[i].pause();
   }
   playPauseBtn.innerHTML =
-    '<img src="assets/img/botaoplay.svg" alt="Pause Button" />';
+    '<img src="assets/img/playbtn.svg" alt="Pause Button" />';
   isPlaying = false;
 }

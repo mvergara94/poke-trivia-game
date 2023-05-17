@@ -1,3 +1,3 @@
-import { startGame } from './gamelogic.js';
+import { startGame } from 'gameLogic.js';
 
 startGame();

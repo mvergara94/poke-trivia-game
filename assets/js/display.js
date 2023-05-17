@@ -1,5 +1,5 @@
 import Elements from './elements.js';
-import { checkAnswer } from './gamelogic.js';
+import { checkAnswer } from 'gameLogic.js';
 
 export function showPokemon(pokeImg) {
   Elements.board.innerHTML = `<img src="${pokeImg}">`;

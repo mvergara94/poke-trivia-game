@@ -1,5 +1,6 @@
 .footer {
   margin-bottom: 2rem;
+  box-sizing: border-box;
 }
 
 .footer__button {

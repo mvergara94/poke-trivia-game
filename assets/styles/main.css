@@ -1,13 +1,16 @@
 .board-container {
   display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+  /* flex-grow: 1; */
 }
 
 .poketrivia-board {
-  margin: 0.5rem;
+  margin: 0.5rem 0;
   display: flex;
   flex-direction: column;
   text-align: center;
-  gap: 0.5rem;
+  gap: 1rem;
 }
 
 .board__start-btn {
@@ -46,7 +49,7 @@
 }
 
 .board__img img {
-  width: 250px;
+  width: 100%;
 }
 
 .board__options {

@@ -1,12 +1,16 @@
 header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;  
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr auto;
+  grid-template-areas:
+    'logo menu'
+    'highscore highscore';
+  padding: 10px;
   width: 100%;
 }
 
 .logo-container {
+  grid-area: logo;
   display: flex;
   align-items: center;
 }
@@ -17,6 +21,8 @@ header {
 }
 
 .menu {
+  grid-area: menu;
+  justify-self: end;
   display: flex;
   align-items: center;
   width: 150px;
@@ -37,9 +43,9 @@ header {
 }
 
 .high-score {
+  grid-area: highscore;
+  justify-self: end;
+  text-align: center;
   width: 150px;
   font-size: 0.65rem;
-  position: absolute;
-  top: 60px;
-  right: 0px;
 }

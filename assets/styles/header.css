@@ -1,11 +1,11 @@
 header {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr auto;
+  grid-template-rows: 1fr 1fr;
   grid-template-areas:
     'logo menu'
-    'highscore highscore';
-  padding: 10px;
+    'logo highscore';
+  padding: 1rem;
   width: 100%;
 }
 
@@ -23,6 +23,7 @@ header {
 .menu {
   grid-area: menu;
   justify-self: end;
+  align-self: flex-start;
   display: flex;
   align-items: center;
   width: 150px;
@@ -45,7 +46,14 @@ header {
 .high-score {
   grid-area: highscore;
   justify-self: end;
+  align-self: center;
   text-align: center;
   width: 150px;
   font-size: 0.65rem;
+}
+
+@media (min-width: 1024px) {
+  header {
+    padding: 0.5rem 3rem;
+  }
 }

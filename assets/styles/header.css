@@ -21,6 +21,8 @@ header {
 .menu {
   display: flex;
   align-items: center;
+  width: 150px;
+  justify-content: space-between;
 }
 
 .menu-btn {
@@ -37,8 +39,9 @@ header {
 }
 
 .high-score {
+  width: 150px;
   font-size: 0.65rem;
   position: absolute;
   top: 60px;
-  right: 15px;
+  right: 0px;
 }

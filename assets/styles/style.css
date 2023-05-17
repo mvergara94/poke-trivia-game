@@ -17,6 +17,7 @@
 }
 
 body {
+  box-sizing: border-box;
   font-family: var(--primary-font);
   height: 100vh;
   position: relative;
@@ -24,7 +25,6 @@ body {
   align-items: center;
   justify-content: space-between;
   flex-direction: column;
-  gap: 2rem;
 }
 
 body::before {

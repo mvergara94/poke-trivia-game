@@ -1,11 +1,11 @@
-const playPauseBtn = document.getElementById("playPauseBtn");
-const previousBtn = document.getElementById("previousBtn");
-const nextBtn = document.getElementById("nextBtn");
-const audioTracks = document.querySelectorAll(".track");
+const playPauseBtn = document.getElementById('playPauseBtn');
+const previousBtn = document.getElementById('previousBtn');
+const nextBtn = document.getElementById('nextBtn');
+const audioTracks = document.querySelectorAll('.track');
 let currentTrackIndex = 0;
 let isPlaying = false;
 
-playPauseBtn.addEventListener("click", () => {
+playPauseBtn.addEventListener('click', () => {
   if (isPlaying) {
     pauseAudio();
   } else {
@@ -13,25 +13,33 @@ playPauseBtn.addEventListener("click", () => {
   }
 });
 
-previousBtn.addEventListener("click", () => {
+previousBtn.addEventListener('click', () => {
   currentTrackIndex =
     (currentTrackIndex - 1 + audioTracks.length) % audioTracks.length;
   playAudio();
 });
 
-nextBtn.addEventListener("click", () => {
+nextBtn.addEventListener('click', () => {
   currentTrackIndex = (currentTrackIndex + 1) % audioTracks.length;
   playAudio();
 });
+
+for (let i = 0; i < audioTracks.length; i++) {
+  audioTracks[i].addEventListener('ended', () => {
+    currentTrackIndex = (currentTrackIndex + 1) % audioTracks.length;
+    playAudio();
+  });
+}
 
 function playAudio() {
   for (let i = 0; i < audioTracks.length; i++) {
     if (i === currentTrackIndex) {
       audioTracks[i].currentTime = 0;
-      audioTracks[i].volume = 0.1;
+      audioTracks[i].volume = 0.3;
       audioTracks[i].play();
     } else {
       audioTracks[i].pause();
+      audioTracks[i].currentTime = 0;
     }
   }
   playPauseBtn.innerHTML =

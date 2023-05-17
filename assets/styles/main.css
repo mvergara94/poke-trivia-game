@@ -1,3 +1,7 @@
+.board-container {
+  flex-grow: 1;
+}
+
 .poketrivia-board {
   margin: 0.5rem;
   display: flex;
@@ -57,6 +61,7 @@
   border-radius: 0.5rem;
   font-size: 0.65rem;
   font-family: var(--primary-font);
+  text-transform: uppercase;
 }
 
 .board__options button:active {

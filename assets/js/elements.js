@@ -5,7 +5,8 @@ const Elements = {
   triviaOptions: document.querySelector('.board__options'),
   loadingOverlay: document.querySelector('.loading-overlay'),
   resetButton: document.querySelector('.footer__button'),
-  
+  correctSound: document.querySelector('.right-track'),
+  wrongSound: document.querySelector('.wrong-track'),
 };
 
 export default Elements;

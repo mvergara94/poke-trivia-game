@@ -28,9 +28,11 @@ export function startGame() {
 export function checkAnswer(option, correctPokemonName) {
   if (option.textContent === correctPokemonName) {
     points++;
+    Elements.correctSound.play();
 
     showScore(points);
   } else {
+    Elements.wrongSound.play();
   }
 
   nextRound();

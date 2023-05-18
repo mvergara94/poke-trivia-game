@@ -42,3 +42,7 @@ export function hideStartButton() {
 export function showResetButton() {
   Elements.resetButton.style.display = 'block';
 }
+
+export function updateHighScore(value = 0) {
+  Elements.highScore.innerHTML = `HighScore:${value}`;
+}

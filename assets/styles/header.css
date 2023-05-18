@@ -23,7 +23,6 @@ header {
 .menu {
   grid-area: menu;
   justify-self: end;
-  align-self: flex-start;
   display: flex;
   align-items: center;
   width: 150px;
@@ -34,9 +33,15 @@ header {
   background-color: transparent;
   border: none;
   cursor: pointer;
+  padding: 0;
+  width: 28px;
 }
 .menu-btn img {
-  width: 24px;
+  max-width: 100%;
+}
+
+.menu-btn:nth-child(2) {
+  width: 26px;
 }
 
 .next-btn img {
@@ -47,9 +52,10 @@ header {
   grid-area: highscore;
   justify-self: end;
   align-self: center;
-  text-align: center;
+  text-align: left;
   width: 150px;
   font-size: 0.65rem;
+  padding-left: 4px;
 }
 
 @media (min-width: 1024px) {

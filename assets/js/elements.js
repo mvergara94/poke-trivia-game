@@ -7,6 +7,7 @@ const Elements = {
   resetButton: document.querySelector('.footer__button'),
   correctSound: document.querySelector('.right-track'),
   wrongSound: document.querySelector('.wrong-track'),
+  highScore: document.querySelector('[data-high-score]'),
 };
 
 export default Elements;

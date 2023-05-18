@@ -7,6 +7,7 @@ import {
   hideLoading,
   hideStartButton,
   showResetButton,
+  updateHighScore,
 } from './display.js';
 import { buildBoard } from './board.js';
 
@@ -27,13 +28,16 @@ export function startGame() {
 
 export function checkAnswer(option, correctPokemonName) {
   if (option.textContent === correctPokemonName) {
-    points++;
+    points++;    
+    Elements.correctSound.volume = 0.3;
     Elements.correctSound.play();
 
     showScore(points);
   } else {
     Elements.wrongSound.play();
   }
+
+  updatePoints(points);
 
   nextRound();
 }
@@ -43,9 +47,28 @@ function nextRound() {
   showLoading();
   buildBoard();
   hideLoading();
+  updateHighScore(getStoredPoints());
 }
 
 function resetBoard() {
   Elements.board.innerHTML = '';
   Elements.triviaOptions.innerHTML = '';
+}
+
+function savePoints(value) {
+  localStorage.setItem('pontos', value.toString());
+}
+
+function getStoredPoints() {
+  const highScorePoints = localStorage.getItem('pontos');
+  return parseInt(highScorePoints);
+}
+
+function updatePoints(points) {  
+  let highScorePoints = getStoredPoints();
+
+  if (highScorePoints < points) {
+    highScorePoints = points;
+    savePoints(highScorePoints);
+  }
 }

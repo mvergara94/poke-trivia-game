@@ -30,9 +30,12 @@ export function showLoading() {
 }
 
 export function hideLoading() {
-  setTimeout(() => {
-    Elements.loadingOverlay.style.display = 'none';
-  }, 1000);
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      Elements.loadingOverlay.style.display = 'none';
+      resolve();
+    }, 1000);
+  });
 }
 
 export function hideStartButton() {
@@ -45,4 +48,8 @@ export function showResetButton() {
 
 export function updateHighScore(value = 0) {
   Elements.highScore.innerHTML = `HighScore: ${value}`;
+}
+
+export function showErrorMessage() {
+  Elements.boardContainer.innerHTML = `<h2>Desculpe, não foi possível carregar o conteúdo</h2>`;
 }

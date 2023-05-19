@@ -1,4 +1,5 @@
 const Elements = {
+  boardContainer: document.querySelector('.poketrivia-board'),
   score: document.querySelector('.board__score'),
   board: document.querySelector('.board__img'),
   startTriviaBtn: document.querySelector('#start-trivia-btn'),

@@ -8,16 +8,18 @@ import {
   hideStartButton,
   showResetButton,
   updateHighScore,
+  showErrorMessage,
 } from './display.js';
 import { buildBoard } from './board.js';
 
 export function startGame() {
   Elements.startTriviaBtn.addEventListener('click', async () => {
-    showLoading();
-    showScore(0);
-    await buildBoard();
     hideStartButton();
-    hideLoading();
+    showLoading();
+    buildBoard().catch(error => {
+      hideLoading();
+      showErrorMessage();
+    });
     showResetButton();
     updateHighScore(getPoints());
   });
@@ -47,8 +49,10 @@ export function checkAnswer(option, correctPokemonName) {
 function nextRound() {
   resetBoard();
   showLoading();
-  buildBoard();
-  hideLoading();
+  buildBoard().catch(error => {
+    hideLoading();
+    showErrorMessage();
+  });
 }
 
 function resetBoard() {

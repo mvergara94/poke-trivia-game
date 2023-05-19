@@ -44,5 +44,5 @@ export function showResetButton() {
 }
 
 export function updateHighScore(value = 0) {
-  Elements.highScore.innerHTML = `HighScore:${value}`;
+  Elements.highScore.innerHTML = `HighScore: ${value}`;
 }

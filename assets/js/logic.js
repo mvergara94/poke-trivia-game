@@ -31,10 +31,12 @@ export function checkAnswer(option, correctPokemonName) {
   if (option.textContent === correctPokemonName) {
     points++;
     savePoints(points);
-    Elements.correctSound.volume = 0.3;
+    Elements.correctSound.volume = 0.2;
     Elements.correctSound.play();
     showScore(points);
   } else {
+    points = 0;
+    showScore(points);
     Elements.wrongSound.play();
   }
 

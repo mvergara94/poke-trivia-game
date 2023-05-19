@@ -1,18 +1,26 @@
-export function generateRandomNumbers() {
-  const randomNumbers = [];
-  let i;
-  for (i = 0; i < 4; i++) {
-    const randomNumber = getUniqueRandomNumber(randomNumbers, 1, 150);
+let usedNumbers = [];
+
+export function generateRandomNumbers(min = 1, max = 150) {
+  let numbers = [];
+
+  for (let i = min; i <= max; i++) {
+    numbers.push(i);
+  }
+
+  numbers = numbers.filter(number => !usedNumbers.includes(number));
+
+  let randomNumbers = [];
+
+  while (randomNumbers.length < 4) {
+    const randomIndex = Math.floor(Math.random() * numbers.length);
+    const randomNumber = numbers[randomIndex];
+    numbers.splice(randomIndex, 1);
     randomNumbers.push(randomNumber);
   }
+
+  usedNumbers.push(randomNumbers[0]);
+
   return randomNumbers;
-}
-function getUniqueRandomNumber(array, min, max) {
-  let randomNumber = Math.floor(Math.random() * (max - min + 1) + min);
-  while (array.includes(randomNumber)) {
-    randomNumber = Math.floor(Math.random() * (max - min + 1) + min);
-  }
-  return randomNumber;
 }
 
 export function shuffleArray(array) {

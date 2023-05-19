@@ -1,4 +1,4 @@
-let points = 0;
+export let points = 0;
 
 import Elements from './elements.js';
 import {
@@ -17,8 +17,8 @@ export function startGame() {
     hideStartButton();
     showLoading();
     buildBoard().catch(error => {
-      hideLoading();
       showErrorMessage();
+      hideLoading();
     });
     showResetButton();
     updateHighScore(getPoints());
@@ -35,10 +35,8 @@ export function checkAnswer(option, correctPokemonName) {
     savePoints(points);
     Elements.correctSound.volume = 0.2;
     Elements.correctSound.play();
-    showScore(points);
   } else {
     points = 0;
-    showScore(points);
     Elements.wrongSound.play();
   }
 
@@ -50,8 +48,8 @@ function nextRound() {
   resetBoard();
   showLoading();
   buildBoard().catch(error => {
-    hideLoading();
     showErrorMessage();
+    hideLoading();
   });
 }
 

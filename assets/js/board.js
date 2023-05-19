@@ -1,6 +1,7 @@
 import { generateRandomNumbers, shuffleArray } from './numberGenerator.js';
 import { showPokemon, showTriviaOptions, showScore } from './display.js';
 import { hideLoading } from './display.js';
+import { points } from './logic.js';
 
 export async function buildBoard() {
   const pokemonNumbers = generateRandomNumbers();
@@ -9,10 +10,11 @@ export async function buildBoard() {
       response.json()
     )
   );
+
   const pokemons = await Promise.all(pokemonPromises);
   const correctPokemon = pokemons[0];
   const correctPokemonName = pokemons[0].name;
-  showScore(0);
+  showScore(points);
   showPokemon(correctPokemon.sprites.front_default);
   showTriviaOptions(shuffleArray(pokemons), correctPokemonName);
 

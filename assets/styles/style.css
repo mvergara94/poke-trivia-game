@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 @import url('overlay.css');
+@import url('side-menu.css');
 @import url('tracks.css');
 @import url('header.css');
 @import url('main.css');

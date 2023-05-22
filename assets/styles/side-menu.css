@@ -1,0 +1,89 @@
+.side-menu {
+  display: none;
+  flex-direction: column;
+  align-items: end;
+  justify-content: right;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  padding: 1rem;
+  gap: 2rem;
+  background-color: var(--overlay-font);
+  z-index: 99;
+}
+
+.close-menu-btn {
+  font-family: var(--primary-font);
+  border: none;
+  background: transparent;
+  font-size: 2.5rem;
+}
+
+.dificulties-btn {
+  align-self: flex-start;
+  padding: 0rem 0.75rem;
+  cursor: pointer;
+  font-size: 1.25rem;
+}
+#dificulties:checked ~ .dificulties-btn {
+  color: white;
+}
+
+.menu-dif-options {
+  display: none;
+  padding: 0rem 0.75rem;
+  align-self: flex-start;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.menu-dif-options input {
+  display: none;
+}
+
+.menu-dif-options label {
+  font-size: 1.1rem;
+  padding: 0.1rem;
+  cursor: pointer;
+}
+
+.dif-active {
+  animation: blinkingBackground 1s infinite;
+}
+
+@keyframes blinkingBackground {
+  0% {
+    background-color: white;
+  }
+  50% {
+    background-color: var(--overlay-font);
+  }
+  100% {
+    background-color: white;
+  }
+}
+.social-list {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+
+  width: 100%;
+  gap: 2rem;
+}
+
+.social-img {
+  width: 48px;
+}
+
+#dificulties {
+  display: none;
+}
+
+@media (min-width: 1200px) {
+  .side-menu {
+    width: 50%;
+    right: 0;
+  }
+}

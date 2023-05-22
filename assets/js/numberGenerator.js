@@ -1,6 +1,6 @@
 let usedNumbers = [];
 
-export function generateRandomNumbers(min = 1, max = 150) {
+export function generateRandomNumbers(min, max) {
   let numbers = [];
 
   for (let i = min; i <= max; i++) {

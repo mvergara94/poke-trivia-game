@@ -9,6 +9,18 @@ const Elements = {
   correctSound: document.querySelector('.right-track'),
   wrongSound: document.querySelector('.wrong-track'),
   highScore: document.querySelector('[data-high-score]'),
+  openMenuBtn: document.querySelector('.gear-btn'),
+  closeMenuBtn: document.querySelector('.close-menu-btn'),
+  sideMenu: document.querySelector('.side-menu'),
+  menuSound: document.querySelector('.menu-sound'),
+  dificultieBtn: document.querySelector('.dificulties-btn'),
+  dificultiesOptions: document.querySelector('.menu-dif-options'),
+  normalDif: document.querySelector('#difficulty-normal'),
+  hardDif: document.querySelector('#difficulty-hard'),
+  min: 1,
+  max: 300,
+  normalLabel: document.querySelector('[data-normal]'),
+  hardLabel: document.querySelector('[data-hard]'),
 };
 
 export default Elements;

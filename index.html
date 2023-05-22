@@ -14,6 +14,65 @@
     <meta name="description" content="Trivia fun game about pokemon names!" />
   </head>
   <body>
+    <aside class="side-menu">
+      <button class="close-menu-btn">X</button>
+      <input type="checkbox" id="dificulties" />
+      <label for="dificulties" class="dificulties-btn">
+        <span>Dificuldades </span>
+      </label>
+      <div class="menu-dif-options">
+        <input
+          type="radio"
+          name="difficulty"
+          value="normal"
+          id="difficulty-normal"
+          checked
+        />
+        <label for="difficulty-normal" class="dif-active" data-normal
+          >Normal</label
+        >
+        <input
+          type="radio"
+          name="difficulty"
+          value="hard"
+          id="difficulty-hard"
+        />
+        <label for="difficulty-hard" data-hard>Difícil</label>
+        <!-- 
+          Em implementação
+          <input
+          type="radio"
+          name="difficulty"
+          value="impossible"
+          id="difficulty-impossible"
+        />
+        <label for="difficulty-impossible">Modo Impossível</label> -->
+      </div>
+      <ul class="social-list">
+        <li class="social-item">
+          <a
+            href="https://www.linkedin.com/in/mvergara94/"
+            class="social-link"
+            target="_blank"
+            ><img
+              src="assets/img/linkedin_black_logo_icon_147114.svg"
+              class="social-img"
+              alt="My linkedin"
+          /></a>
+        </li>
+        <li class="social-item">
+          <a
+            href="https://github.com/mvergara94"
+            class="social-link"
+            target="_blank"
+            ><img
+              src="assets/img/github-logo_icon-icons.com_73546.svg"
+              class="social-img"
+              alt="My github"
+          /></a>
+        </li>
+      </ul>
+    </aside>
     <header>
       <div class="logo-container">
         <a href="https://mvergara94.github.io/Porfolio/" target="_blank">
@@ -58,6 +117,7 @@
       <button class="footer__button">RESET</button>
     </footer>
     <div class="tracks-container">
+      <audio src="assets/sounds/menu-sound.mp3" class="menu-sound"></audio>
       <audio src="assets/sounds/track1.mp3" class="track first-track"></audio>
       <audio src="assets/sounds/track2.mp3" class="track second-track"></audio>
       <audio src="assets/sounds/track3.mp3" class="track third-track"></audio>
@@ -71,6 +131,7 @@
       ></audio>
     </div>
     <script src="assets/js/soundTrack.js"></script>
+    <script src="assets/js/menu.js" type="module"></script>
     <script src="assets/js/script.js" type="module"></script>
   </body>
 </html>

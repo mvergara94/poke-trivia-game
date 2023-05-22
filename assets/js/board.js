@@ -2,9 +2,10 @@ import { generateRandomNumbers, shuffleArray } from './numberGenerator.js';
 import { showPokemon, showTriviaOptions, showScore } from './display.js';
 import { hideLoading } from './display.js';
 import { points } from './logic.js';
+import Elements from './elements.js';
 
 export async function buildBoard() {
-  const pokemonNumbers = generateRandomNumbers();
+  const pokemonNumbers = generateRandomNumbers(Elements.min, Elements.max);
   const pokemonPromises = pokemonNumbers.map(number =>
     fetch(`https://pokeapi.co/api/v2/pokemon/${number}`).then(response =>
       response.json()

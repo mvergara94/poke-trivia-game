@@ -2,7 +2,6 @@ export let points = 0;
 
 import Elements from './elements.js';
 import {
-  showScore,
   showLoading,
   hideLoading,
   hideStartButton,
@@ -14,6 +13,8 @@ import { buildBoard } from './board.js';
 
 export function startGame() {
   Elements.startTriviaBtn.addEventListener('click', async () => {
+    Elements.menuSound.currentTime = 0;
+    Elements.menuSound.play();
     hideStartButton();
     showLoading();
     buildBoard().catch(error => {
@@ -25,7 +26,8 @@ export function startGame() {
   });
 
   Elements.resetButton.addEventListener('click', () => {
-    location.reload();
+    points = 0;
+    nextRound();
   });
 }
 

@@ -1,5 +1,3 @@
-export let points = 0;
-
 import Elements from './elements.js';
 import {
   showLoading,
@@ -26,19 +24,19 @@ export function startGame() {
   });
 
   Elements.resetButton.addEventListener('click', () => {
-    points = 0;
+    Elements.points = 0;
     nextRound();
   });
 }
 
 export function checkAnswer(option, correctPokemonName) {
   if (option.textContent === correctPokemonName) {
-    points++;
-    savePoints(points);
+    Elements.points++;
+    savePoints(Elements.points);
     Elements.correctSound.volume = 0.2;
     Elements.correctSound.play();
   } else {
-    points = 0;
+    Elements.points = 0;
     Elements.wrongSound.play();
   }
 

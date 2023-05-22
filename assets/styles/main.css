@@ -56,6 +56,10 @@
   height: 150px;
 }
 
+.dificultie-layer {
+  filter: brightness(0);
+}
+
 .board__options {
   display: flex;
   flex-wrap: wrap;

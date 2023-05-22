@@ -38,15 +38,14 @@
           id="difficulty-hard"
         />
         <label for="difficulty-hard" data-hard>Difícil</label>
-        <!-- 
-          Em implementação
-          <input
+
+        <input
           type="radio"
           name="difficulty"
           value="impossible"
           id="difficulty-impossible"
         />
-        <label for="difficulty-impossible">Modo Impossível</label> -->
+        <label for="difficulty-impossible" data-imposible>Impossível</label>
       </div>
       <ul class="social-list">
         <li class="social-item">
@@ -117,6 +116,10 @@
       <button class="footer__button">RESET</button>
     </footer>
     <div class="tracks-container">
+      <audio
+        src="assets/sounds/difficultyhard.mp3"
+        class="imposible-dif"
+      ></audio>
       <audio src="assets/sounds/menu-sound.mp3" class="menu-sound"></audio>
       <audio src="assets/sounds/track1.mp3" class="track first-track"></audio>
       <audio src="assets/sounds/track2.mp3" class="track second-track"></audio>

@@ -2,8 +2,7 @@ const Elements = {
   boardContainer: document.querySelector('.poketrivia-board'),
   score: document.querySelector('.board__score'),
   points: 0,
-  board: document.querySelector('.board__img'),
-  startTriviaBtn: document.querySelector('#start-trivia-btn'),
+  board: document.querySelector('.board__img'),    startTriviaBtn: document.querySelector('#start-trivia-btn'),
   triviaOptions: document.querySelector('.board__options'),
   loadingOverlay: document.querySelector('.loading-overlay'),
   resetButton: document.querySelector('.footer__button'),
@@ -14,14 +13,17 @@ const Elements = {
   closeMenuBtn: document.querySelector('.close-menu-btn'),
   sideMenu: document.querySelector('.side-menu'),
   menuSound: document.querySelector('.menu-sound'),
+  impDificultieSound: document.querySelector('.imposible-dif'),
   dificultieBtn: document.querySelector('.dificulties-btn'),
   dificultiesOptions: document.querySelector('.menu-dif-options'),
   normalDif: document.querySelector('#difficulty-normal'),
   hardDif: document.querySelector('#difficulty-hard'),
+  impossibleDif: document.querySelector('#difficulty-impossible'),
   min: 1,
   max: 300,
   normalLabel: document.querySelector('[data-normal]'),
   hardLabel: document.querySelector('[data-hard]'),
+  impossibleLabel: document.querySelector('[data-imposible]'),
 };
 
 export default Elements;

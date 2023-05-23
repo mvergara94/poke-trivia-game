@@ -8,7 +8,6 @@ Elements.openMenuBtn.addEventListener('click', () => {
 
 Elements.closeMenuBtn.addEventListener('click', () => {
   Elements.sideMenu.style.display = 'none';
-
   Elements.menuSound.currentTime = 0;
   Elements.menuSound.play();
 });
